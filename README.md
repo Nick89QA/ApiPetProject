@@ -1,2 +1,2 @@
 # ApiPetProject
-Hi everyone its my test UI and Api project
+Hi everyone it's my test UI and Api project
