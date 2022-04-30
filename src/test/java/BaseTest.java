@@ -1,8 +1,8 @@
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.junit.After;
-import org.junit.Before;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 
 
 abstract public class BaseTest {
@@ -15,12 +15,12 @@ abstract public class BaseTest {
         Configuration.headless = false; //настройка отображения экрана
     }
 
-    @Before
+    @BeforeEach
     public void init() { //вызов метода setUp
         setUp();
     }
 
-    @After
+    @AfterEach
     public void tearDown() {
         Selenide.closeWebDriver(); //закрытие вебдрайвера
     }
