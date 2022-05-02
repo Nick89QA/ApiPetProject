@@ -9,7 +9,9 @@ public class AppleTest extends BaseTest {
     @Test
     public void checkHref() {
        MainPage mainPage = new MainPage(); //инициализация класса
-        mainPage.openWebSite(BASE_URL);
+        mainPage.mainPage(BASE_URL);
+        mainPage.search(SEARCH_STRING);
+        int i = 1;
     }
 
 }

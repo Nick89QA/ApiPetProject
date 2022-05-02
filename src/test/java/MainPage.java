@@ -9,13 +9,22 @@ import static com.codeborne.selenide.Selenide.$x;
  */
 
 public class MainPage {
-    private static SelenideElement searchButton = $x("//form");
+    private static SelenideElement textBoxInput = $x("//input[@type='text']");
 
-    public void clickOnSearch() { //метод клик по кнопке
-        searchButton.click();
-    }
-
-    public void openWebSite(String url) {
+    public void mainPage(String url) {
         Selenide.open(url);
     }
+
+    /**
+     * search articles and press enter
+     * @param searchString
+     */
+    public void search(String searchString) { //метод клик по кнопке
+        textBoxInput.setValue(searchString);
+        textBoxInput.pressEnter();
+    }
+
+
 }
+
+
