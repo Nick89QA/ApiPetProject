@@ -17,6 +17,7 @@ public class MainPage {
 
     /**
      * search articles and press enter
+     *
      * @param searchString
      */
     public void search(String searchString) { //метод клик по кнопке
