@@ -1,4 +1,6 @@
-import com.codeborne.selenide.Selenide;
+package appleinsider;
+
+import core.BaseTest;
 import org.junit.Assert;
 import org.junit.Test;
 

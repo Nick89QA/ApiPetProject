@@ -1,3 +1,5 @@
+package core;
+
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -7,6 +9,10 @@ import org.junit.jupiter.api.BeforeEach;
 
 abstract public class BaseTest {
 
+    /**
+     * Инициализация selenide с настройками
+     */
+
     public void setUp() {
         WebDriverManager.chromedriver().setup(); //установка хромдрайвера при запуске
         Configuration.browser = "chrome";
@@ -15,10 +21,18 @@ abstract public class BaseTest {
         Configuration.headless = false; //настройка отображения экрана
     }
 
+    /**
+     * Метод выполняется перед каждым запуском
+     */
+
     @BeforeEach
     public void init() { //вызов метода setUp
         setUp();
     }
+
+    /**
+     * Метод выполняется после запуска
+     */
 
     @AfterEach
     public void tearDown() {
