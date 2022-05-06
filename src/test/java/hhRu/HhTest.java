@@ -11,7 +11,7 @@ public class HhTest extends BaseTest {
   public void checkAttributesHashMap(){
 
       HhResumePage hhResumePage = new HhResumePage(URL);
-      hhResumePage.getGenderHard();
+      boolean t = hhResumePage.isReadyToRelocate();
 
   }
 

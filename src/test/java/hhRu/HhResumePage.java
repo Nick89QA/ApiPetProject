@@ -10,6 +10,7 @@ public class HhResumePage {
     private final SelenideElement checkGender = $x("//span[@data-qa='resume-personal-gender']");
     private final SelenideElement age = $x("//span[@data-qa='resume-personal-age']/span");
     private final SelenideElement city = $x("//span[@data-qa='resume-personal-address']");
+    private final SelenideElement liveData = $x("//span[@data-qa='resume-personal-address']/ancestor::p");
 
     /**
      * в конструкторе передаем url который находится в HhTest.java
@@ -17,6 +18,10 @@ public class HhResumePage {
      */
     public HhResumePage(String url) {
         Selenide.open(url);
+    }
+
+    public String getCity() {
+        return city.getText();
     }
 
     /**
@@ -29,6 +34,11 @@ public class HhResumePage {
 
     public int getAge() {
      return Integer.parseInt(age.getText().replaceAll("\\D+", ""));
+    }
+
+    public boolean isReadyToRelocate() {
+        return liveData.getText().split("")[1].equals("не готов к переезду");
+
     }
 
 
