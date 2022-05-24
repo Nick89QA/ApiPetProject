@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import static com.codeborne.selenide.Selenide.$x;
-import static javax.swing.UIManager.put;
+
 
 public class HhResumePage {
 

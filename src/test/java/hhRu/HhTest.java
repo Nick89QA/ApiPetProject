@@ -1,7 +1,11 @@
 package hhRu;
 
 import core.BaseTest;
+import org.junit.Assert;
 import org.junit.Test;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class HhTest extends BaseTest {
 
@@ -10,9 +14,21 @@ public class HhTest extends BaseTest {
   @Test
   public void checkAttributesHashMap(){
 
+      /**
+       * Ожидаемые атрибуты в виде хешмапы
+       * ключи лежат в hhResumePage
+       */
       HhResumePage hhResumePage = new HhResumePage(URL);
-      boolean t = hhResumePage.isReadyToRelocate();
+      Map<String, Object> expectedAttributes = new HashMap<>();
+      expectedAttributes.put(HhResumePage.GENDER, "М");
+      expectedAttributes.put(HhResumePage.AGE, "26");
+      expectedAttributes.put(HhResumePage.CITY, "Санкт-Петербург");
+      expectedAttributes.put(HhResumePage.Confirmed_Phone, true);
+      expectedAttributes.put(HhResumePage.READY_TO_RELOCATE,false);
 
+      Map<String,Object> actualAttributes = hhResumePage.getAttributes();
+
+      Assert.assertEquals(expectedAttributes, actualAttributes);
   }
 
 }
