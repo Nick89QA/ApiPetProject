@@ -18,7 +18,7 @@ abstract public class BaseTest {
         Configuration.browser = "chrome";
         Configuration.driverManagerEnabled = true; //разрешение для вебдрайвер менеджера
         Configuration.browserSize = "1920*1080"; //разрешение браузера
-        Configuration.headless = false; //настройка отображения экрана
+        Configuration.headless = true; //настройка отображения экрана
     }
 
     /**

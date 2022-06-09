@@ -28,6 +28,7 @@ public class HhResumePage {
 
     /**
      * в конструкторе передаем url который находится в HhTest.java
+     *
      * @param url
      */
     public HhResumePage(String url) {
@@ -36,24 +37,26 @@ public class HhResumePage {
 
     /**
      * метод проверяет наличие галочки на дисплее
+     *
      * @return
      */
     public boolean isPhoneConfirmed() {
-       return tick.isDisplayed();
+        return tick.isDisplayed();
     }
 
     /**
      * создали хешкарту и положили актуальные результаты
+     *
      * @return
      */
-    public Map<String,Object> getAttributes() {
-        return new HashMap<String, Object>(){{
-        put(GENDER, getGenderHard());
-        put(AGE, getAge());
-        put(CITY, getCity());
-        put(Confirmed_Phone, isPhoneConfirmed());
-        put(READY_TO_RELOCATE, isReadyToRelocate());
-            }};
+    public Map<String, Object> getAttributes() {
+        return new HashMap<String, Object>() {{
+            put(GENDER, getGender());
+            put(AGE, getAge());
+            put(CITY, getCity());
+            put(Confirmed_Phone, isPhoneConfirmed());
+            put(READY_TO_RELOCATE, isReadyToRelocate());
+        }};
     }
 
     public String getCity() {
@@ -62,14 +65,15 @@ public class HhResumePage {
 
     /**
      * метод который сравнивает текст в переменной
+     *
      * @return
      */
-    public String getGenderHard() {
-      return checkGender.getText().equals("Мужчина") ? "М" : "Ж";
+    public String getGender() {
+        return checkGender.getText().equals("Мужчина") ? "М" : "Ж";
     }
 
     public int getAge() {
-     return Integer.parseInt(age.getText().replaceAll("\\D+", ""));
+        return Integer.parseInt(age.getText().replaceAll("\\D+", ""));
     }
 
     public boolean isReadyToRelocate() {
